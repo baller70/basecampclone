@@ -10,7 +10,7 @@ export default function VideoSection() {
       >
         <div
           className="bg-yellow-300 px-6 py-3 rounded-md shadow-lg border-2 border-yellow-400"
-          style={{ fontFamily: 'Permanent Marker, Marker, Arial, sans-serif', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.5px', color: '#111' }}
+          style={{ fontFamily: 'Marker Felt, Comic Sans MS, cursive', fontSize: '1.75rem', fontWeight: 700, letterSpacing: '0.5px', color: '#111' }}
         >
           HIT PLAY TO SEE HOW BASECAMP IS DIFFERENT
         </div>

@@ -4,50 +4,55 @@ export default function ProjectFeatures() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Walkthrough text block, left-aligned as in screenshot */}
-        <div className="mb-16 text-left max-w-3xl">
-          <h2 className="text-6xl font-black tracking-tight text-black mb-4" style={{lineHeight: 1.1}}>
-            Let's walk through it.
+        <div className="mb-12 text-left max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-black mb-6" style={{lineHeight: 1.1}}>
+            Projects get teams — and keep teams — organized.
           </h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-black mb-3 whitespace-nowrap" style={{lineHeight: 1.15, whiteSpace: 'nowrap'}}>
-            10 seconds after you sign up, clarity sets in.
-          </h3>
-          <p className="text-xl md:text-2xl text-black">
-            <span className="whitespace-nowrap">The home screen organizes your projects, assignments, and upcoming events together on one screen.</span><br />
-            <span className="whitespace-nowrap">It's your calm, comfortable, simple starting point every morning.</span>
+          <p className="text-2xl text-black max-w-3xl">
+            A project is where the tasks, discussions, deliverables, and decisions happen. Projects hold everything — and everyone — together in one tidy, predictably structured place.
           </p>
         </div>
         {/* Screenshot section: pixel-perfect match to provided screenshot */}
-        <div className="flex justify-center items-start w-full mt-12 mb-16">
-          {/* Left column: two stacked images (3 on top, 5 below) */}
-          <div className="flex flex-col gap-8 relative" style={{ width: 700 }}>
-            {/* Top card: 3.jpeg with sticky note */}
-            <div className="relative mb-2">
-              <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-4deg)' }}>
-                <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
-                  <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHAT'S MY WEEK LOOK LIKE?</span>
-                </div>
-              </div>
-              <Image src="/images/3.jpeg" alt="What's My Week Look Like?" width={680} height={340} className="rounded-xl shadow-md border border-neutral-200" />
+        <div className="grid grid-cols-3 gap-8 items-start">
+          {/* Left Card */}
+          <div className="relative col-span-2">
+            {/* Sticky Note Overlapping the Card */}
+            <div className="sticky-note" style={{ position: 'absolute', top: '-36px', left: '24px', transform: 'rotate(-4deg)', zIndex: 2, fontSize: '1.5rem', fontWeight: 'bold', background: '#ffe600', padding: '8px 24px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+              A PROJECT PAGE ORGANIZES EVERYTHING
             </div>
-            {/* Bottom card: 5.jpeg with sticky note */}
-            <div className="relative mt-2">
-              <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-2deg)' }}>
-                <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
-                  <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHICH PROJECTS AM I ON?</span>
-                </div>
-              </div>
-              <Image src="/images/5.jpeg" alt="Which Projects Am I On?" width={680} height={340} className="rounded-xl shadow-md border border-neutral-200" />
-            </div>
+            <img src="/images/3.jpeg" alt="Project Page" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '32px' }} />
           </div>
-          {/* Right column: one large image (4.jpeg) with sticky note */}
-          <div className="relative ml-16" style={{ width: 1400 }}>
-            <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-4deg)' }}>
-              <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
-                <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHAT'S ON MY PLATE TODAY?</span>
+          {/* Right Cards */}
+          <div className="flex flex-col gap-8">
+            {/* Top Right Card */}
+            <div className="relative">
+              <div className="sticky-note" style={{ position: 'absolute', top: '-32px', left: '16px', transform: 'rotate(-3deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+                WHAT TO DO + WHO'S DOING?
+              </div>
+              <img src="/images/4.jpeg" alt="To-dos" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px' }} />
+            </div>
+            {/* Middle Right Card */}
+            <div className="relative">
+              <div className="sticky-note" style={{ position: 'absolute', top: '-32px', left: '16px', transform: 'rotate(2deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+                WHO SAID WHAT WHEN?
+              </div>
+              <img src="/images/5.jpeg" alt="Reminders" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px' }} />
+            </div>
+            {/* Bottom Right Cards (two small cards side by side) */}
+            <div className="flex gap-4 mt-2">
+              <div className="relative w-1/2">
+                <div className="sticky-note" style={{ position: 'absolute', top: '-28px', left: '8px', transform: 'rotate(-2deg)', zIndex: 2, fontSize: '1rem', fontWeight: 'bold', background: '#ffe600', padding: '4px 12px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+                  WHAT'S DUE NEXT?
+                </div>
+                <img src="/images/calendar-interface.png" alt="Schedule" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '20px' }} />
+              </div>
+              <div className="relative w-1/2">
+                <div className="sticky-note" style={{ position: 'absolute', top: '-28px', left: '8px', transform: 'rotate(1deg)', zIndex: 2, fontSize: '1rem', fontWeight: 'bold', background: '#ffe600', padding: '4px 12px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+                  WHERE'S THE LATEST VERSION?
+                </div>
+                <img src="/images/dashboard-interface.png" alt="Docs & Files" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '20px' }} />
               </div>
             </div>
-            <Image src="/images/4.jpeg" alt="What's On My Plate Today?" width={1380} height={520} className="rounded-xl shadow-md border border-gray-200" />
           </div>
         </div>
         {/* Features grid */}
@@ -59,22 +64,33 @@ export default function ProjectFeatures() {
                 <span className="text-sm font-bold text-black uppercase font-handwriting">A PROJECT PAGE ORGANIZES EVERYTHING</span>
               </div>
             </div>
-            <div className="bg-[#faf8f3] rounded-2xl border border-black/10 p-8 pt-16 min-h-[320px] flex flex-col justify-between">
-              <div>
-                <h4 className="text-2xl font-bold mb-2">Company Meetup: Austin, TX</h4>
-                <p className="text-gray-700 mb-4">December 2nd-6th</p>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold">+15</span>
-                  <span className="text-green-600 font-bold">On track</span>
+            <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-8 flex-1 relative" style={{ minWidth: 420 }}>
+              {/* Insert the text block here, under the sticky note */}
+              <div className="project-text-block" style={{ marginTop: '0', marginBottom: '24px' }}>
+                <div style={{ fontWeight: 'bold', fontSize: '2rem', lineHeight: 1.1 }}>
+                  Projects get teams — and keep teams — organized.
                 </div>
-                <ul className="text-sm text-gray-800 space-y-1">
-                  <li>✓ Venue booking confirmed</li>
-                  <li>✓ Catering arranged</li>
-                  <li>◐ Presentation prep</li>
-                </ul>
+                <div style={{ fontSize: '1.25rem', marginTop: '8px' }}>
+                  A project is where the tasks, discussions, deliverables, and decisions happen. Projects hold everything — and everyone — together in one tidy, predictably structured place.
+                </div>
               </div>
-              <div className="mt-6">
-                <span className="text-xs font-semibold text-gray-500">WHAT'S MY WEEK LOOK LIKE?</span>
+              <div className="bg-[#faf8f3] rounded-2xl border border-black/10 p-8 pt-16 min-h-[320px] flex flex-col justify-between">
+                <div>
+                  <h4 className="text-2xl font-bold mb-2">Company Meetup: Austin, TX</h4>
+                  <p className="text-gray-700 mb-4">December 2nd-6th</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold">+15</span>
+                    <span className="text-green-600 font-bold">On track</span>
+                  </div>
+                  <ul className="text-sm text-gray-800 space-y-1">
+                    <li>✓ Venue booking confirmed</li>
+                    <li>✓ Catering arranged</li>
+                    <li>◐ Presentation prep</li>
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <span className="text-xs font-semibold text-gray-500">WHAT'S MY WEEK LOOK LIKE?</span>
+                </div>
               </div>
             </div>
           </div>
