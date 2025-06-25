@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} cyber-grid noise`}>
+      <body className={inter.className}>
         <ErrorBoundary>
           <StagewiseToolbar />
           {children}
