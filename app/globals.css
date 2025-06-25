@@ -27,7 +27,146 @@
   }
 }
 
+/* === Quantum Nexus Cyber-Noir Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fira+Code:wght@400;600&display=swap');
 
+:root {
+  --cyber-bg: #0A0C12;
+  --cyber-component: #181C27;
+  --cyber-input: rgba(30,35,50,.60);
+  --cyber-accent: #00F0C0;
+  --cyber-accent-alt: #FF2A6D;
+  --cyber-text: #E0E7FF;
+  --cyber-secondary: #A0AED0;
+  --cyber-border: #3A3F5E;
+}
+
+html {
+  background-color: var(--cyber-bg);
+  color: var(--cyber-text);
+  font-family: 'Fira Code', monospace;
+}
+
+h1, h2, h3, .display-font {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .05em;
+}
+
+/* Grid background */
+.cyber-grid {
+  background-color: var(--cyber-bg);
+  background-image:
+    linear-gradient(0deg, transparent 29px, rgba(0,240,192,.05) 30px),
+    linear-gradient(90deg, transparent 29px, rgba(0,240,192,.05) 30px);
+  background-size: 30px 30px;
+}
+
+/* Noise overlay */
+.noise::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .05;
+}
+
+/* Neon glow */
+.glow {
+  box-shadow: 0 0 15px var(--cyber-accent);
+  transition: all .25s ease;
+}
+.glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--cyber-accent);
+}
+.glow-alt {
+  box-shadow: 0 0 15px var(--cyber-accent-alt);
+}
+.glow-alt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--cyber-accent-alt);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--cyber-accent), var(--cyber-accent-alt));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Glitch */
+.cyber-glitch {
+  position: relative;
+}
+.cyber-glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 1px 0 var(--cyber-accent-alt);
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim 2s infinite steps(100);
+}
+
+@keyframes glitch-anim {
+  0% { clip-path: inset(0 0 90% 0); }
+  10% { clip-path: inset(10% 0 80% 0); }
+  20% { clip-path: inset(20% 0 60% 0); }
+  30% { clip-path: inset(30% 0 40% 0); }
+  40% { clip-path: inset(40% 0 20% 0); }
+  50% { clip-path: inset(50% 0 0 0); }
+  60% { clip-path: inset(40% 0 20% 0); }
+  70% { clip-path: inset(30% 0 40% 0); }
+  80% { clip-path: inset(20% 0 60% 0); }
+  90% { clip-path: inset(10% 0 80% 0); }
+  100% { clip-path: inset(0 0 90% 0); }
+}
+
+/* Buttons */
+.btn-cyber {
+  border-radius: 6px;
+  font-weight: 700;
+  padding: .5rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--cyber-accent);
+  color: var(--cyber-bg);
+}
+.btn-primary:hover { opacity: .9; }
+.btn-secondary {
+  border: 1px solid var(--cyber-accent-alt);
+  color: var(--cyber-accent-alt);
+  background: transparent;
+}
+.btn-secondary:hover { background: rgba(255,42,109, .1); }
+
+/* Utility classes */
+.border-cyber { border: 1px solid var(--cyber-border); }
+.bg-component { background: var(--cyber-component); }
+
+/* Scanline embellishment */
+.scanline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(255,255,255,.75);
+  mix-blend-mode: screen;
+  animation: scanline 5s linear infinite;
+}
+@keyframes scanline { 0% { transform: translateY(-100%);} 100% { transform: translateY(100%);} }
+
+/* Disable heavy motion */
+@media (prefers-reduced-motion: reduce) {
+  .glow:hover, .glow-alt:hover { transform: none; }
+  .cyber-glitch::before { animation: none; opacity: .85; }
+}
+/* === End Cyber-Noir Theme === */
 
 img {
   object-position: top;
