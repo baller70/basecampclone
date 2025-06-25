@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Button Component Conventions
+
+This rule documents conventions, patterns, and best practices for the `Button` component in `components/ui/button.tsx`.
+
+## 1. Component Structure
+- The Button is a React functional component using `forwardRef` for ref forwarding.
+- It supports rendering as a native `button` or as a child component via the `asChild` prop (using Radix UI's `Slot`).
+- The component is exported alongside its `buttonVariants` utility.
+
+## 2. Styling and Variants
+- Uses `class-variance-authority` (`cva`) to define style variants and sizes.
+- Default variant is `default`, default size is `default`.
+- Supported variants: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`.
+- Supported sizes: `default`, `sm`, `lg`, `icon`.
+- All variants and sizes are defined in the `buttonVariants` object.
+- Use the `cn` utility for className composition.
+
+**Example:**
+```tsx
+<Button variant="destructive" size="lg">Delete</Button>
+<Button variant="outline" asChild><a href="/">Link</a></Button>
+```
+
+## 3. Accessibility
+- The Button supports all native `button` attributes via props.
+- Disabled state is handled with `disabled:pointer-events-none disabled:opacity-50` classes.
+- Focus styles are included for accessibility.
+
+## 4. Icon Support
+- SVG icons are supported as children and styled with `&_svg` selectors for consistent sizing and spacing.
+- Icons are not interactive (pointer-events-none).
+
+**Example:**
+```tsx
+<Button><Icon />Save</Button>
+```
+
+## 5. Forwarding Props
+- All additional props are forwarded to the rendered element (`button` or child).
+- The `ref` is forwarded for integration with parent components or libraries.
+
+## 6. Usage Guidelines
+- Prefer using the `Button` component for all interactive button-like elements for consistency.
+- Use the `asChild` prop to render as a different element (e.g., `a`) when needed for routing or semantics.
+- Use the appropriate variant and size for the context.
+
+## 7. Display Name
+- The component sets `Button.displayName = "Button"` for better debugging and DevTools support.
+
+## 8. Export Pattern
+- Both `Button` and `buttonVariants` are exported for use in other components or for custom styling.
+
+---
+
+**Follow these conventions to ensure consistency and maintainability when using or extending the Button component.**
