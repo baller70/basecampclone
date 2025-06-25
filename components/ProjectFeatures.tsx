@@ -8,7 +8,6 @@ export default function ProjectFeatures() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-left max-w-4xl">
           <h2 className="text-5xl md:text-6xl font-black tracking-tight text-black mb-2" style={{lineHeight: 1.1, textAlign: 'left'}}>Let's walk through it.</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-black mb-2" style={{textAlign: 'left'}}>10 seconds after you sign up, clarity sets in.</h3>
           <div className="text-2xl text-black font-normal leading-snug mb-8" style={{textAlign: 'left'}}>
             <span className="block whitespace-nowrap">The home screen organizes your projects, assignments, and upcoming events together on</span>
             <span className="block whitespace-nowrap">one screen. It's your calm, comfortable, simple starting point every morning.</span>
