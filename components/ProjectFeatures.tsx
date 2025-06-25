@@ -48,32 +48,4 @@ export default function ProjectFeatures() {
           {/* Deleted the card matching the screenshot as requested */}
         </div>
 
-        {/* YES! badges section */}
-        <div className="flex justify-center space-x-8 mb-16">
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform rotate-2 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
-          </div>
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform -rotate-1 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
-          </div>
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform rotate-1 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
-          </div>
-        </div>
-
-        {/* Bottom content */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-black mb-4">
-            10 seconds after you sign up, clarity sets in.
-          </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Everything is purposeful, organized, and easy to find. No more digging through email chains or hunting for the latest version of a file.
-          </p>
-          <a href="#" className="inline-block px-8 py-4 bg-green-500 text-white text-lg font-semibold rounded-full hover:bg-green-600 transition-colors">
-            Let's walk through it
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
+        
