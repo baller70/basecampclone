@@ -1,17 +1,55 @@
+import Image from 'next/image';
+
 export default function ProjectFeatures() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-            Projects get teams — and keep teams — organized.
+        {/* Walkthrough text block, left-aligned as in screenshot */}
+        <div className="mb-16 text-left max-w-3xl">
+          <h2 className="text-6xl font-black tracking-tight text-black mb-4" style={{lineHeight: 1.1}}>
+            Let's walk through it.
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            A project is where the tasks, discussions, deliverables, and decisions happen. Projects hold everything — and everyone — together in one tidy, predictably structured place.
+          <h3 className="text-3xl md:text-4xl font-extrabold text-black mb-3 whitespace-nowrap" style={{lineHeight: 1.15, whiteSpace: 'nowrap'}}>
+            10 seconds after you sign up, clarity sets in.
+          </h3>
+          <p className="text-xl md:text-2xl text-black">
+            <span className="whitespace-nowrap">The home screen organizes your projects, assignments, and upcoming events together on one screen.</span><br />
+            <span className="whitespace-nowrap">It's your calm, comfortable, simple starting point every morning.</span>
           </p>
         </div>
-
+        {/* Screenshot section: pixel-perfect match to provided screenshot */}
+        <div className="flex justify-center items-start w-full mt-12 mb-16">
+          {/* Left column: two stacked images (3 on top, 5 below) */}
+          <div className="flex flex-col gap-8 relative" style={{ width: 700 }}>
+            {/* Top card: 3.jpeg with sticky note */}
+            <div className="relative mb-2">
+              <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-4deg)' }}>
+                <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
+                  <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHAT'S MY WEEK LOOK LIKE?</span>
+                </div>
+              </div>
+              <Image src="/images/3.jpeg" alt="What's My Week Look Like?" width={680} height={340} className="rounded-xl shadow-md border border-neutral-200" />
+            </div>
+            {/* Bottom card: 5.jpeg with sticky note */}
+            <div className="relative mt-2">
+              <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-2deg)' }}>
+                <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
+                  <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHICH PROJECTS AM I ON?</span>
+                </div>
+              </div>
+              <Image src="/images/5.jpeg" alt="Which Projects Am I On?" width={680} height={340} className="rounded-xl shadow-md border border-neutral-200" />
+            </div>
+          </div>
+          {/* Right column: one large image (4.jpeg) with sticky note */}
+          <div className="relative ml-16" style={{ width: 1400 }}>
+            <div className="absolute -top-8 left-2 z-10" style={{ transform: 'rotate(-4deg)' }}>
+              <div className="bg-yellow-300 px-5 py-2 rounded-md shadow-lg border-2 border-yellow-400 w-fit">
+                <span className="text-lg font-bold text-black uppercase font-handwriting tracking-tight">WHAT'S ON MY PLATE TODAY?</span>
+              </div>
+            </div>
+            <Image src="/images/4.jpeg" alt="What's On My Plate Today?" width={1380} height={520} className="rounded-xl shadow-md border border-gray-200" />
+          </div>
+        </div>
         {/* Features grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Feature 1 */}
@@ -21,34 +59,22 @@ export default function ProjectFeatures() {
                 <span className="text-sm font-bold text-black uppercase font-handwriting">A PROJECT PAGE ORGANIZES EVERYTHING</span>
               </div>
             </div>
-            <div className="bg-white rounded-lg overflow-hidden border-4 border-blue-500 shadow-xl">
-              <div className="p-6">
-                <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                  <h3 className="font-bold text-lg mb-2">Company Meetup: Austin, TX</h3>
-                  <p className="text-sm text-gray-600 mb-2">December 2nd-6th</p>
-                  <div className="flex -space-x-2 mb-2">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full border-2 border-white"></div>
-                    <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
-                    <div className="w-6 h-6 bg-purple-500 rounded-full border-2 border-white"></div>
-                    <div className="w-6 h-6 bg-orange-500 rounded-full border-2 border-white"></div>
-                    <span className="text-xs text-gray-500 ml-2">+15</span>
-                  </div>
-                  <div className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs inline-block">On track</div>
+            <div className="bg-[#faf8f3] rounded-2xl border border-black/10 p-8 pt-16 min-h-[320px] flex flex-col justify-between">
+              <div>
+                <h4 className="text-2xl font-bold mb-2">Company Meetup: Austin, TX</h4>
+                <p className="text-gray-700 mb-4">December 2nd-6th</p>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold">+15</span>
+                  <span className="text-green-600 font-bold">On track</span>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-500">✓</span>
-                    <span className="text-sm">Venue booking confirmed</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-500">✓</span>
-                    <span className="text-sm">Catering arranged</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-blue-500">◐</span>
-                    <span className="text-sm">Presentation prep</span>
-                  </div>
-                </div>
+                <ul className="text-sm text-gray-800 space-y-1">
+                  <li>✓ Venue booking confirmed</li>
+                  <li>✓ Catering arranged</li>
+                  <li>◐ Presentation prep</li>
+                </ul>
+              </div>
+              <div className="mt-6">
+                <span className="text-xs font-semibold text-gray-500">WHAT'S MY WEEK LOOK LIKE?</span>
               </div>
             </div>
           </div>
