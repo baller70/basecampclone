@@ -42,7 +42,6 @@ How to add new cursor rules to the project
 
 5. Cursor rules have the following structure:
 
-```
 ---
 description: Short description of the rule's purpose
 globs: optional/path/pattern/**/*
@@ -69,4 +68,120 @@ function badExample() {
   // Implementation not following guidelines
 }
 ```
+
+---
+# Project Directory Structure Rule
+
+description: Overview of the basecamp-clone project directory structure, with guidance on the purpose and contents of key files and folders.
+globs: '**/*'
+alwaysApply: true
+
+## Top-Level Directories and Files
+
+- `app/` — Main Next.js application directory. Contains global styles (`globals.css`), layout (`layout.tsx`), and the main page (`page.tsx`).
+- `components/` — Shared React components for the UI, including:
+  - `ui/` — Reusable UI primitives (buttons, dialogs, forms, etc.).
+  - Other files: Feature sections, layout elements, error boundaries, etc.
+- `public/` — Static assets served at the root. Includes:
+  - `images/` — Project images, logos, and screenshots.
+  - Other static files (e.g., `use.txt`).
+- `lib/` — Utility libraries and helper functions (e.g., `utils.ts`).
+- `hooks/` — Custom React hooks (e.g., `use-mobile.tsx`, `use-toast.ts`).
+- `src/` — (Optional) Placeholder for future modularization; currently contains empty `components/`, `lib/`, and `hooks/` folders.
+- `.cursor/` — Cursor configuration and rules.
+  - `rules/` — Project-specific rules and self-improvement guidelines.
+- `node_modules/` — Installed dependencies (auto-managed).
+- `dist/` — Build output (auto-generated).
+- `.git/` — Git version control data.
+- `.next/` — Next.js build output (auto-generated).
+
+## Key Files
+
+- `README.md` — Project overview and setup instructions.
+- `package.json` — Project dependencies and scripts.
+- `pnpm-lock.yaml` — Dependency lockfile for pnpm.
+- `tsconfig.json` — TypeScript configuration.
+- `next.config.js` — Next.js configuration.
+- `tailwind.config.js` — Tailwind CSS configuration.
+- `postcss.config.js` — PostCSS configuration.
+- `.eslintrc.json` / `eslint.config.js` — ESLint configuration.
+- `.gitignore` — Git ignore rules.
+
+## Guidance
+
+- Place new UI components in `components/` or `components/ui/` as appropriate.
+- Add new static assets to `public/` or `public/images/`.
+- Use `lib/` for shared utilities and `hooks/` for custom hooks.
+- Update this rule if the directory structure changes or new important files are added.
+
+# End of Directory Structure Rule
+
+---
+description: Overview of the technology stack, major dependencies, and versioning best practices for basecamp-clone
+alwaysApply: true
+globs: '**/package.json'
+
+# Application Stack & Dependency Versions Rule
+
+## Major Dependencies & Versions
+
+- **next**: ^15.3.4  
+  _React framework for server-side rendering and static site generation._
+- **react**: ^18.3.1  
+  _Core UI library._
+- **react-dom**: ^18.3.1  
+  _DOM bindings for React._
+- **@radix-ui/react-***: ^1.x / ^2.x  
+  _Radix UI primitives for accessible, composable UI components._
+- **tailwindcss**: v3.4.16  
+  _Utility-first CSS framework._
+- **clsx**: ^2.1.1  
+  _Conditional className utility._
+- **class-variance-authority**: ^0.7.1  
+  _For managing Tailwind class variants._
+- **zod**: ^3.24.1  
+  _TypeScript-first schema validation._
+- **react-hook-form**: ^7.54.2  
+  _Form state management._
+- **@hookform/resolvers**: ^3.10.0  
+  _Validation resolver for react-hook-form._
+- **date-fns**: ^3.0.0  
+  _Modern date utility library._
+- **lucide-react**: ^0.364.0  
+  _Icon library for React._
+- **embla-carousel-react**: ^8.5.2  
+  _Carousel/slider component._
+- **recharts**: ^2.12.4  
+  _Charting library for React._
+- **vaul**: ^1.1.2  
+  _Dialog/modal library._
+- **sonner**: ^1.7.2  
+  _Toast notification library._
+- **next-themes**: ^0.4.4  
+  _Theme switching for Next.js._
+- **eslint-config-next**: ^15.3.4  
+  _ESLint config for Next.js._
+- **typescript**: ~5.6.2  
+  _TypeScript static typing._
+
+## Notable DevDependencies
+
+- **eslint**: ^9.15.0
+- **autoprefixer**: 10.4.20
+- **postcss**: 8.4.49
+- **@types/***: TypeScript type definitions for Node, React, etc.
+
+## Best Practices & Remarks
+
+- **Next.js 15.x**: Stay updated with minor releases for security and performance. Review [Next.js migration guides](https://nextjs.org/docs/upgrading) when upgrading major versions.
+- **React 18.x**: Enables concurrent features and improved SSR. Ensure all third-party libraries are compatible with React 18 before upgrading.
+- **Radix UI**: Use consistent versions across all @radix-ui packages to avoid compatibility issues. Always check [Radix UI docs](https://www.radix-ui.com/docs/primitives/overview/introduction) for accessibility best practices.
+- **Tailwind CSS 3.x**: Use the latest minor for new features and bug fixes. Keep `tailwindcss-animate` and `tailwind-merge` up to date for best compatibility.
+- **TypeScript**: Use the latest stable minor for improved type safety and tooling. Update type definitions (`@types/*`) alongside TypeScript upgrades.
+- **ESLint**: Use the Next.js config for best practices. Keep rules and plugins updated to catch new issues.
+- **Form & Validation**: Use `react-hook-form` with `zod` for robust, type-safe forms.
+- **Date Handling**: Prefer `date-fns` for modern, tree-shakable date utilities.
+- **General**: Regularly audit dependencies for vulnerabilities (`pnpm audit` or `npm audit`). Remove unused packages to reduce bundle size.
+
+# End of Application Stack & Dependency Versions Rule
 

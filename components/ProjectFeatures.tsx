@@ -14,9 +14,9 @@ export default function ProjectFeatures() {
           </div>
         </div>
         {/* Screenshot section: pixel-perfect match to provided screenshot */}
-        <div className="grid grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-4 gap-8 items-start">
           {/* Left Card */}
-          <div className="relative col-span-2">
+          <div className="relative col-span-3">
             {/* Sticky Note Overlapping the Card */}
             <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '24px', transform: 'rotate(-4deg)', zIndex: 2, fontSize: '1.5rem', fontWeight: 'bold', background: '#ffe600', padding: '8px 24px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
               A PROJECT PAGE ORGANIZES EVERYTHING
@@ -27,7 +27,7 @@ export default function ProjectFeatures() {
           <div className="flex flex-col gap-8">
             {/* Top Right Card */}
             <div className="relative">
-              <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(-3deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive' }}>
+              <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(-3deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
                 WHAT TO DO + WHO'S DOING?
               </div>
               <img src="/images/4.jpeg" alt="To-dos" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px' }} />
@@ -39,6 +39,13 @@ export default function ProjectFeatures() {
               </div>
               <img src="/images/5.jpeg" alt="Reminders" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px' }} />
             </div>
+            {/* New Bottom Right Card (duplicate) */}
+            <div className="relative">
+              <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(-1deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
+                WHO SAID WHAT WHEN?
+              </div>
+              <img src="/images/5.jpeg" alt="Reminders Duplicate" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px' }} />
+            </div>
           </div>
         </div>
         {/* Features grid */}
@@ -47,32 +54,44 @@ export default function ProjectFeatures() {
           {/* Deleted the card matching the screenshot as requested */}
         </div>
 
-        {/* YES! badges section */}
-        <div className="flex justify-center space-x-8 mb-16">
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform rotate-2 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
+        {/* Additional screenshot section (two cards) */}
+        <div className="grid grid-cols-4 gap-8 items-start mt-20">
+          {/* Card 1: Docs & Files */}
+          <div className="relative col-span-2">
+            <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(2deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
+              WHERE'S THE LATEST VERSION?
+            </div>
+            <img src="/images/4.jpeg" alt="Docs and Files" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px', maxHeight: '500px', objectFit: 'cover' }} />
           </div>
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform -rotate-1 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
-          </div>
-          <div className="bg-yellow-300 px-6 py-3 rounded-lg transform rotate-1 shadow-lg border-2 border-yellow-400">
-            <span className="text-2xl font-bold text-black font-handwriting">YES!</span>
+          {/* Card 2: Chat */}
+          <div className="relative col-span-2">
+            <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(-2deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
+              GOT A QUICK QUESTION?
+            </div>
+            <img src="/images/5.jpeg" alt="Chat" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px', maxHeight: '500px', objectFit: 'cover' }} />
           </div>
         </div>
 
-        {/* Bottom content */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-black mb-4">
-            10 seconds after you sign up, clarity sets in.
-          </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Everything is purposeful, organized, and easy to find. No more digging through email chains or hunting for the latest version of a file.
-          </p>
-          <a href="#" className="inline-block px-8 py-4 bg-green-500 text-white text-lg font-semibold rounded-full hover:bg-green-600 transition-colors">
-            Let's walk through it
-          </a>
+        {/* Second row below with Docs & Chat cards */}
+        <div className="grid grid-cols-4 gap-8 items-start mt-16">
+          {/* Docs and Files Card */}
+          <div className="relative col-span-2">
+            <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(2deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
+              WHERE'S THE LATEST VERSION?
+            </div>
+            <img src="/images/4.jpeg" alt="Docs and Files" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px', maxHeight: '500px', objectFit: 'cover' }} />
+          </div>
+          {/* Chat Card */}
+          <div className="relative col-span-2">
+            <div className="sticky-note" style={{ position: 'absolute', top: '8px', left: '16px', transform: 'rotate(-2deg)', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', background: '#ffe600', padding: '6px 18px', borderRadius: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.10)', fontFamily: 'Marker Felt, Comic Sans MS, cursive', whiteSpace: 'nowrap' }}>
+              GOT A QUICK QUESTION?
+            </div>
+            <img src="/images/5.jpeg" alt="Chat" className="w-full rounded-2xl shadow-lg" style={{ marginTop: '28px', maxHeight: '500px', objectFit: 'cover' }} />
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
+
+        

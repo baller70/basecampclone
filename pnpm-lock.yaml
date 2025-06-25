@@ -159,6 +159,9 @@ importers:
       '@eslint/js':
         specifier: ^9.15.0
         version: 9.29.0
+      '@stagewise/toolbar':
+        specifier: ^0.4.9
+        version: 0.4.9
       '@types/node':
         specifier: ^22.10.7
         version: 22.15.33
@@ -1301,6 +1304,9 @@ packages:
 
   '@rushstack/eslint-patch@1.11.0':
     resolution: {integrity: sha512-zxnHvoMQVqewTJr/W4pKjF0bMGiKJv1WX7bSrkl46Hg0QjESbzBROWK0Wg4RphzSOS5Jiy7eFimmM3UgMrMZbQ==}
+
+  '@stagewise/toolbar@0.4.9':
+    resolution: {integrity: sha512-fBggX+4nLwRDHnevWk32BjpMpc6vjF2k9mdamsPqAUnbsKbJnkTCjm0o8DOKcjRO9M/PGwcED4Ct0AWHQvkR/Q==}
 
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
@@ -4220,6 +4226,8 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.11.0': {}
+
+  '@stagewise/toolbar@0.4.9': {}
 
   '@swc/counter@0.1.3': {}
 

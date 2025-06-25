@@ -3,6 +3,24 @@
     "netlify": {
       "command": "npx",
       "args": ["-y", "@netlify/mcp"]
+    },
+    "Desktop-Commander": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ]
+    },
+    "Github MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}",
+        "GITHUB_TOOLSETS": "all"
+      }
     }
   }
 } 
